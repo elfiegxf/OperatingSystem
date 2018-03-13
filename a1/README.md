@@ -1,6 +1,6 @@
 ## Comp111 Assignment 1: measuring time
 # Overview
-In class we have discussed the nature of time in an operating system, including the fundamental inaccuracies in the system clock and the concept of operating system "overhead". In this assignment, we will write a program that measures and quantifies the time taken to execute a variety of C library functions and system calls. This program can be run on a variety of linux hardware to measure library function speed on each kind of hardware.  
+In this assignment, we will write a program that measures and quantifies the time taken to execute a variety of C library functions and system calls. This program can be run on a variety of linux hardware to measure library function speed on each kind of hardware.  
 
 # Objectives   
 The objective is to write a program timing.c that measures the time taken for the following function calls that we will use later in the course:  
