@@ -1,0 +1,19 @@
+#! /usr/bin/perl 
+
+my $sum = 0; 
+my $count = 0; 
+foreach my $trial (1..20) { 
+    open(OUTPUT,  "./a.out -seed $trial 2>&1 |") or die "can't run a.out: $!"; 
+    my $last = ""; 
+    while (<OUTPUT>) { 
+        chomp; 
+        $last = $_ if s/.*ratio blocked\/compute=//; 
+    } 
+    $sum = $sum + $last; 
+    print "seed $trial: ratio is $last\n"; 
+    $count++; 
+} 
+
+my $average = $sum / $count; 
+print("total over $count trials is $sum, average is $average\n"); 
+
