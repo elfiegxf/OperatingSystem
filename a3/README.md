@@ -13,11 +13,11 @@ Your objective is to write a C program watch that, when invoked, runs another gi
 
 watch ./a.out  
 should invoke your program watch to invoke and watch the execution of the child process a.out. watch should react to several conditions in the child process with preventative actions, and report each prevented behavior and action to stderr.  
-If the child occupies more than 4 MB of stack memory, it should be killed and this event should be reported. The program 1.c does this.  
-If the child occupies more than 4 MB of heap memory, it should be killed and this event should be reported. The program 2.c does this.  
-If the child forks, it should be killed and the event should be reported. The program 3.c does this.  
-If the child creates a thread, it should be killed and the event should be reported. The program 4.c does this.  
-If the child opens any file (other than the pre-opened files stdin, stdout, stderr), this should be prevented and the program should be terminated. The program 5.c does this.  
+- If the child occupies more than 4 MB of stack memory, it should be killed and this event should be reported. The program 1.c does this.  
+- If the child occupies more than 4 MB of heap memory, it should be killed and this event should be reported. The program 2.c does this.  
+- If the child forks, it should be killed and the event should be reported. The program 3.c does this.  
+- If the child creates a thread, it should be killed and the event should be reported. The program 4.c does this.  
+- If the child opens any file (other than the pre-opened files stdin, stdout, stderr), this should be prevented and the program should be terminated. The program 5.c does this.  
 When the child dies for any reason -- including a normal exit -- its exit status code, total runtime, number of lines printed to stdout, and (wallclock) time of death should be reported. In all of the above cases, one should:  
 Report the behavior on stderr.  
 Kill all instances of the child with an unblockable kill (-9).  
