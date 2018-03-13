@@ -1,9 +1,9 @@
 
-## Comp111 Assignment 2: ants and aardvarks
-# Overview
+# Comp111 Assignment 2: ants and aardvarks
+## Overview
 One of the most famous problems in concurrency is that of the "Dining Philosophers", who must share knives and forks in a concurrent manner. But this has been studied too much in the literature, so instead, we will study the "Dining Aardvarks".
 There are 11 aardvarks and 3 anthills. There are 100 ants in each anthill. Only 3 aardvarks can share one anthill at a time. It takes one second of real time for an aardvark to slurp up an ant, and another second for the aardvark to swallow it, during which time it is not using the anthill and another aardvark can start slurping. However, should an aardvark attempt to slurp an ant from an anthill where 3 aardvarks are already slurping, or make any other kind of mistake, including attempting to slurp from an already empty anthill or an anthill that doesn't exist, it will be 4 seconds before the aardvark is available to slurp again. The simulator calls that 'sulking'.
-# Objectives
+## Objectives
 Your objective is to manage the aardvarks so that all of the ants are consumed in a minimal amount of real time. Each aardvark is a thread in a multi-threaded program. You are given a simulator for the anthills that invokes the aardvarks and measures the resulting behavior.  
 You must write one thread  
 
@@ -42,5 +42,5 @@ slurp tries to slurp up an ant. It returns in two seconds of real time if it suc
 chow_time returns 1 if there's an ant left anywhere, and 0 if not. Your threads should return when this returns 0.  
 elapsed returns the seconds of real time (wallclock time) since the start of the simulation.  
 A starting version of the aardvarks code may be found in /comp/111/a/a2/aardvarks.c.  
-# The Simulator
+## The Simulator
 test aardvarks.c by use of a simulator, currently contained in /comp/111/a/a2/anthills.c and /comp/111/a/a2/anthills.h. You may not modify this simulator (except to test your theories), but may use whatever information you can glean from the source code. During grading, this simulator will be the one that is used. The simulator creates your threads and waits for them to complete. It also provides mechanisms by which your threads must slurp the ants. These mechanisms employ concurrency locks in the manner discussed in class: see the code for details.
