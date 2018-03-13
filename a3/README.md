@@ -18,10 +18,10 @@ should invoke your program watch to invoke and watch the execution of the child 
 - If the child forks, it should be killed and the event should be reported. The program 3.c does this.  
 - If the child creates a thread, it should be killed and the event should be reported. The program 4.c does this.  
 - If the child opens any file (other than the pre-opened files stdin, stdout, stderr), this should be prevented and the program should be terminated. The program 5.c does this.   
-
-When the child dies for any reason -- including a normal exit -- its exit status code, total runtime, number of lines printed to stdout, and (wallclock) time of death should be reported. In all of the above cases, one should:  
+- When the child dies for any reason -- including a normal exit -- its exit status code, total runtime, number of lines printed to stdout, and (wallclock) time of death should be reported. In all of the above cases, one should:  
 Report the behavior on stderr.  
-Kill all instances of the child with an unblockable kill (-9).  
+- Kill all instances of the child with an unblockable kill (-9).  
 Report the child's exit status code, total runtime, number of lines printed to stdout, and (wallclock) time of death, as if it had died normally.  
-After any of these, the watch program should exit.  
+- After any of these, the watch program should exit.    
+
 Part of the problem is to distinguish which behaviors can be controlled through the operating system itself, which ones can be controlled through monitoring, and which can only be controlled partially due to extenuating circumstances. Some of the above conditions are easy to assure, and some are impossible to completely control. Some can be "controlled" but one cannot be sure exactly which condition was violated. It is part of your task to determine which parts of these requirements are possible to accomplish, and which ones are not!
