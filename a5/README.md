@@ -1,10 +1,10 @@
-## Comp111 Assignment 5
+# Comp111 Assignment 5
 Benchmarking -- Extra Credit
 This is an extra credit assignment. All points earned on this assignment are added to the total assignment score before dividing by four. Thus it is possible to have more than 40 points added to the assignment score, which will raise your whole grade.  
-# Overview
+## Overview
 An operating system benchmark is a program that determines the speed of some operation within the operating system. There are several kinds of benchmarks, depending upon what one is measuring. In this assignment we will measure both the speed of disk I/O and the speed of cache hits of various kinds.  
 
-# Objective
+## Objective
 Your objective is to write several benchmark programs that measure the following attributes (if possible):  
 - (a5a.c) The speed with which one can read from the disk containing your home directory and class directory (it's the same for everyone). Please print the seconds needed to read 8192 bytes.   
 - (a5b.c) The speed with which one can read from the local directory /tmp on your local machine (writeable to everyone). Please print the seconds needed to read 8192 bytes.  
@@ -13,6 +13,7 @@ Your objective is to write several benchmark programs that measure the following
 - (a5e.c) The speed with which one can write to the local directory /tmp on your local machine. Please print the seconds needed to write 8192 bytes.   
 - (a5f.c) The speed with which one can write to the page disk cache. Please print the seconds needed to write 8192 bytes.  
 - (a5g.c) The speed with which 8192 bytes can be fetched into the memory cache. Please print the seconds needed to fetch 8192 bytes.  
+
 In all cases, individual actions take a very short time and one must repeat an action multiple times to measure the time for one action.  
 Note that as usual, I have been a bit slimey and some of these are easy to measure, while some are exceedingly difficult to benchmark. Figuring out which ones is up to you!  
 
