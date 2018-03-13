@@ -1,0 +1,25 @@
+###Semaphore
+1.functions:
+int sem_init(sem_t *sem, int pshared, unsigned int value);
+int sem_wait(sem_t *sem) // to wait on a semaphore( to lock a resource)
+int sem_post(sem_t *sem) // to increment the value of a semaphore(to release a resource)
+int sem_getvalue(sem_t *sem, int *valp) // to find out the value of a semaphore
+int sem_destroy(sem_t *sem)
+
+
+
+###global define:
+Because that struct in the brackets is actually a run-time thing. You can only assign constants to a global on initialization. e.g.
+ int a = 8;
+You cannot do this with globals:
+int b = 8;
+int a = b; // Because b is a run-time variable
+Often this technique is used for defining global constants:
+#define MY_CONSTANT 8
+// Then somewhere else you can use it...
+int a = MY_CONSTANT;
+// or
+struct S s = {MY_CONSTANT};
+
+
+###void *, pointer, types, etc.
