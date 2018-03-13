@@ -1,0 +1,55 @@
+1. Sbrk
+sbrk() increments the program's data space by increment bytes. Calling sbrk() with an increment of 0 can be used to find the current location of the program break.
+
+
+2. clock_gettime
+clock_getres(clockid_ clk_id, struct timespec *res);
+clock_gettime(clockid_t clk_id, struct timespec *tp);
+clock_settime(clock_t clk_id,const struct timespec *tp);
+
+// the first argument is the input, while the second is the output
+The function clock_getres() finds the resolution (precision) of the specified clock clk_id.
+ The resolution of clocks depends on the implementation and cannot be configured by a particular process.
+* If the time value pointed to by the argument tp of clock_settime() is not a multiple of res, then it is truncated to a multiple of res.
+
+The functions clock_gettime() and clock_settime() retrieve and set the time of the specified clock clk_id.
+
+The res and tp arguments are timespec structs, as specified in <time.h>:
+
+struct timespec {
+        time_t   tv_sec;        /* seconds */
+        long     tv_nsec;       /* nanoseconds */
+};
+
+
+3.  struct timespec
+The struct timespec structure represents an elapsed time. It is declared in time.h and has the following members:
+
+time_t tv_sec
+This represents the number of whole seconds of elapsed time.
+
+long int tv_nsec
+This is the rest of the elapsed time (a fraction of a second), represented as the number of nanoseconds. It is always less than one billion.
+
+4. int pthread_mutex_init(pthread_mutex_t *restrict mutex,
+const pthread_mutexattr_t *restrict attr);
+
+If atrr is NULL, default mutex attributes are used. Upon successful initialization, the state of the mutex becomes initialized and unlocked.
+It shall be safe to destroy an initialized mutex that is unlocked. 
+Attempting to destroy a locked mutex results in undefined behavior.
+Attempting to initialize an already initialized mutex results in undefined behavior.
+
+
+5. MUTEX
+  There are recursive mutexes(relock: count++) and non-recursive mutexes(relock: deadlock).
+  * Note that non-recursive mutexes have less overhead.
+
+6. SEM_WAIT
+  decrements (locks) the semaphore pointed to by sem. 
+  If the semaphore's value is greater than zero, then the decrement proceeds, and the function returns, immediately. 
+  If the semaphore currently has the value zero, then the call blocks until either it becomes possible to perform the decrement (i.e., the semaphore value rises above zero), or a signal handler interrupts the call.
+
+7.
+
+
+ 
